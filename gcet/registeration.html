@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration page</title>
+	<style>
+		body {
+			font-family: fantasy;
+			background-image: url('bg.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	
+		  .navbar{
+			width: 1200px;
+			height: 75px;
+			margin: auto;
+		}
+		.menu{
+			width: 400px;
+			float: left;
+			height: 70px;
+		}
+		ul{
+			float: left;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		ul li{
+			list-style: none;
+			margin-left: 50px;
+			margin-top: 27px;
+			font-size: 20px;
+		}
+		ul li a{
+			text-decoration: none;
+			color: #ffffff;
+			font-family: Arial;
+			font-weight: bold;
+			transition: 0.4s ease-in-out;
+		}
+		ul li a:hover{
+			color: #ff8400;
+		}
+
+		form {
+			background-image: url('');
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			margin: 50px auto;
+			max-width: 400px;
+		}
+
+		label {
+			color: #fff;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			width: 95%;
+		}
+
+		input[type="submit"] {
+			background-color: #af954c;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		.error-message {
+			color: red;
+			margin-bottom: 10px;
+		}
+	</style>
+	<script>
+        function validateForm() {
+    var FirstName = document.forms["loginForm"]["First Name"].value;
+    var password = document.forms["loginForm"]["password"].value;
+    var FirstNameError = document.getElementById("First Name-error");
+    var passwordError = document.getElementById("password-error");
+
+    if (FirstName == "" || password == "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+    else if (FirstName.length < 4 || FirstName.length > 16) {
+        FirstNameError.innerHTML = "First Name must be between 4 and 16 characters.";
+        passwordError.innerHTML = "";
+        return false;
+    }
+    else if (password.length < 6 || password.length > 20) {
+        passwordError.innerHTML = "Password must be between 6 and 20 characters.";
+        FirstNameError.innerHTML = "";
+        return false;
+    }
+    else {
+        alert("Login successful!");
+        return true;
+    }
+}
+
+    </script>
+</head>
+<body>
+	<div class="main">
+        <div class="navbar">
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="aboutus.html">ABOUT</a></li>
+                    <li><a href="map.html">LOCATION</a></li>
+                    <li><a href="payment.html">PAY</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                </ul>
+            </div>
+
+        </div> 
+	<form name="loginForm" method="post" onsubmit="return validateForm()">
+		<label>First Name:</label>
+		<input type="text" name="First Name" id="First Name"><br>
+
+		 <span class="error-message" id="First Name-error"></span>
+     <label>Last Name:</label>
+     <input type="text" name="Last Name" id="Last Name"><br>
+ 
+      <span class="error-message" id="Last Name-error"></span>
+      <label>Email</label>
+		<input type="text" name="Email" id="Email"><br>
+
+		 <span class="error-message" id="Email-error"></span>
+
+		<label>Password:</label>
+		<input type="password" name="password" id="password"><br>
+
+		 <span class="error-message" id="password-error"></span>
+
+		<input type="submit" value="Login">
+    Already a user? <a href="loginpage.html">LOGIN NOW!!</a>
+	</form>
+  
+</body>
+</html>

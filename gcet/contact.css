@@ -1,0 +1,34 @@
+
+.contact-info {
+	margin-top: 50px;
+}
+
+.contact-info h2 {
+	margin-bottom: 20px;
+}
+
+.contact-info p {
+	margin-bottom: 10px;
+}
+
+.social-media {
+	margin-top: 20px;
+}
+
+.social-media h3 {
+	margin-bottom: 10px;
+}
+
+.social-media ul {
+	padding: 0;
+	list-style: none;
+}
+
+.social-media li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.social-media li:last-child {
+	margin-right: 0;
+}
